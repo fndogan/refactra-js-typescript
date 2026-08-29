@@ -21,7 +21,7 @@
         "dotenv": "^16.4.0",
         "madge": "^8.0.0",
         "openai": "^4.28.0",
-        "p-limit": "^5.0.0",
+        "p-limit": "^7.3.1",
         "prettier": "^3.8.1",
         "react-docgen": "^8.0.2",
         "ts-morph": "^21.0.0",
