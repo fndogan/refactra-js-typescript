@@ -24,7 +24,7 @@
         "p-limit": "^5.0.0",
         "prettier": "^3.8.1",
         "react-docgen": "^8.0.2",
-        "ts-morph": "^21.0.0",
+        "ts-morph": "^28.0.0",
         "typescript": "^5.4.0"
     },
     "engines": {
