@@ -1,0 +1,11 @@
+node_modules/
+output/
+reports/
+logs/
+.env
+*.log
+.ai-cache/
+.DS_Store
+coverage/
+test-tmp-*/
+prompts/private*.txt

@@ -1,0 +1,68 @@
+{
+    "name": "refactra-js-typescript",
+    "version": "0.1.0",
+    "description": "A review-first toolkit for analyzing, transforming, validating, and reporting JavaScript-to-TypeScript migrations with optional AI assistance",
+    "type": "module",
+    "bin": {
+        "refactra-js": "./bin/cli.js"
+    },
+    "scripts": {
+        "start": "node bin/cli.js",
+        "analyze": "node bin/cli.js analyze",
+        "migrate": "node bin/cli.js migrate",
+        "validate": "node bin/cli.js validate",
+        "report": "node bin/cli.js report",
+        "lint": "node scripts/check-source.js",
+        "test": "node --test",
+        "check": "npm run lint && npm test && npm pack --dry-run"
+    },
+    "dependencies": {
+        "@anthropic-ai/sdk": "^0.20.0",
+        "dotenv": "^16.4.0",
+        "madge": "^8.0.0",
+        "openai": "^4.28.0",
+        "p-limit": "^5.0.0",
+        "prettier": "^3.8.1",
+        "react-docgen": "^8.0.2",
+        "ts-morph": "^21.0.0",
+        "typescript": "^5.4.0"
+    },
+    "engines": {
+        "node": ">=22.0.0"
+    },
+    "keywords": [
+        "typescript",
+        "javascript",
+        "migration",
+        "codemod",
+        "react",
+        "jsx",
+        "tsx",
+        "refactra"
+    ],
+    "author": {
+        "name": "Furkan Dogan",
+        "email": "dev@fndogan.com",
+        "url": "https://github.com/fndogan"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fndogan/refactra-js-typescript.git"
+    },
+    "bugs": {
+        "url": "https://github.com/fndogan/refactra-js-typescript/issues"
+    },
+    "homepage": "https://github.com/fndogan/refactra-js-typescript#readme",
+    "files": [
+        ".env.example",
+        "bin",
+        "CONTRIBUTING.md",
+        "prompts/system.example.txt",
+        "scripts",
+        "src",
+        "LICENSE",
+        "README.md",
+        "SECURITY.md"
+    ],
+    "license": "MIT"
+}

@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm pack --dry-run
+      - name: Verify packaged CLI
+        run: |
+          package_archive="$(npm pack --silent)"
+          package_directory="$(mktemp -d)"
+          tar -xzf "$package_archive" -C "$package_directory"
+          node "$package_directory/package/bin/cli.js" --version
+      - run: npm audit --omit=dev --audit-level=high
